@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Testeur"
-Date "2019-06-16"
-Rev "0.1"
+Date "2019-06-19"
+Rev "0.2"
 Comp "Fabien B"
 Comment1 ""
 Comment2 ""
@@ -58,8 +58,6 @@ F 3 "https://docs-emea.rs-online.com/webdocs/0442/0900766b80442f56.pdf" V 10675 
 	1    10850 2950
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	5250 2850 4850 2850
 Wire Wire Line
 	5250 3250 4850 3250
 Wire Wire Line
@@ -1275,4 +1273,32 @@ F 3 "" H 7350 3650 50  0001 C CNN
 	1    7350 3650
 	0    -1   -1   0   
 $EndComp
+$Comp
+L Device:R R6
+U 1 1 5D0A575B
+P 4700 2650
+F 0 "R6" V 4493 2650 50  0000 C CNN
+F 1 "1k" V 4584 2650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4630 2650 50  0001 C CNN
+F 3 "~" H 4700 2650 50  0001 C CNN
+	1    4700 2650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR0145
+U 1 1 5D0A582C
+P 4700 2400
+F 0 "#PWR0145" H 4700 2250 50  0001 C CNN
+F 1 "+5V" V 4715 2528 50  0000 L CNN
+F 2 "" H 4700 2400 50  0001 C CNN
+F 3 "" H 4700 2400 50  0001 C CNN
+	1    4700 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 2400 4700 2500
+Wire Wire Line
+	4700 2800 4700 2850
+Wire Wire Line
+	4700 2850 5250 2850
 $EndSCHEMATC
