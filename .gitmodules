@@ -1,0 +1,3 @@
+[submodule "hardware/kicad/kicad_libs_FBO"]
+	path = hardware/kicad/kicad_libs_FBO
+	url = https://github.com/Fabien-B/kicad_libs_FBO.git
