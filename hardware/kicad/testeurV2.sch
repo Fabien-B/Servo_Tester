@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:testeurV2-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -506,10 +505,10 @@ Wire Wire Line
 Wire Wire Line
 	10850 3100 10850 3200
 $Comp
-L Connector:Conn_01x04_Male J1
+L Connector:Conn_01x04_Male I2C1
 U 1 1 5D0860B8
 P 1300 3600
-F 0 "J1" H 1406 3878 50  0000 C CNN
+F 0 "I2C1" H 1406 3878 50  0000 C CNN
 F 1 "I2C_a" H 1406 3787 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1300 3600 50  0001 C CNN
 F 3 "~" H 1300 3600 50  0001 C CNN
@@ -529,10 +528,10 @@ I2C1_SDA
 Text Label 1900 3800 2    50   ~ 0
 I2C1_SCL
 $Comp
-L Connector:Conn_01x04_Male J10
+L Connector:Conn_01x04_Male CAN1
 U 1 1 5D09A643
 P 3500 2900
-F 0 "J10" H 3472 2780 50  0000 R CNN
+F 0 "CAN1" H 3472 2780 50  0000 R CNN
 F 1 "CAN" H 3472 2871 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3500 2900 50  0001 C CNN
 F 3 "~" H 3500 2900 50  0001 C CNN
@@ -571,10 +570,10 @@ F 3 "" H 1650 3600 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:Conn_01x03_Male J3
+L Connector:Conn_01x03_Male S1
 U 1 1 5D0B270F
 P 1300 4850
-F 0 "J3" H 1406 5128 50  0000 C CNN
+F 0 "S1" H 1406 5128 50  0000 C CNN
 F 1 "S1" H 1406 5037 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1300 4850 50  0001 C CNN
 F 3 "~" H 1300 4850 50  0001 C CNN
@@ -582,10 +581,10 @@ F 3 "~" H 1300 4850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x03_Male J4
+L Connector:Conn_01x03_Male S2
 U 1 1 5D0B28DA
 P 1300 5350
-F 0 "J4" H 1406 5628 50  0000 C CNN
+F 0 "S2" H 1406 5628 50  0000 C CNN
 F 1 "S2" H 1406 5537 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1300 5350 50  0001 C CNN
 F 3 "~" H 1300 5350 50  0001 C CNN
@@ -593,10 +592,10 @@ F 3 "~" H 1300 5350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x03_Male J5
+L Connector:Conn_01x03_Male S3
 U 1 1 5D0B2AA8
 P 1300 5850
-F 0 "J5" H 1406 6128 50  0000 C CNN
+F 0 "S3" H 1406 6128 50  0000 C CNN
 F 1 "S3" H 1406 6037 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1300 5850 50  0001 C CNN
 F 3 "~" H 1300 5850 50  0001 C CNN
@@ -604,10 +603,10 @@ F 3 "~" H 1300 5850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x03_Male J6
+L Connector:Conn_01x03_Male S4
 U 1 1 5D0B9587
 P 1300 6350
-F 0 "J6" H 1406 6628 50  0000 C CNN
+F 0 "S4" H 1406 6628 50  0000 C CNN
 F 1 "S4" H 1406 6537 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1300 6350 50  0001 C CNN
 F 3 "~" H 1300 6350 50  0001 C CNN
@@ -615,10 +614,10 @@ F 3 "~" H 1300 6350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x03_Male J7
+L Connector:Conn_01x03_Male S5
 U 1 1 5D0B96E9
 P 1300 6850
-F 0 "J7" H 1406 7128 50  0000 C CNN
+F 0 "S5" H 1406 7128 50  0000 C CNN
 F 1 "S5" H 1406 7037 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1300 6850 50  0001 C CNN
 F 3 "~" H 1300 6850 50  0001 C CNN
@@ -776,10 +775,10 @@ SERVO4
 Text Label 1850 6950 2    50   ~ 0
 SERVO5
 $Comp
-L Connector:Conn_01x04_Male J2
+L Connector:Conn_01x04_Male JI2C1
 U 1 1 5D0F8590
 P 1300 4200
-F 0 "J2" H 1406 4478 50  0000 C CNN
+F 0 "JI2C1" H 1406 4478 50  0000 C CNN
 F 1 "I2C_b" H 1406 4387 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1300 4200 50  0001 C CNN
 F 3 "~" H 1300 4200 50  0001 C CNN
@@ -821,10 +820,10 @@ I2C1_SDA
 Text Label 1900 4400 2    50   ~ 0
 I2C1_SCL
 $Comp
-L mySymbols:22-03-5035 J8
+L mySymbols:22-03-5035 DYN1
 U 1 1 5D1085D7
 P 3200 4600
-F 0 "J8" H 3828 4546 50  0000 L CNN
+F 0 "DYN1" H 3828 4546 50  0000 L CNN
 F 1 "22-03-5035" H 3828 4455 50  0000 L CNN
 F 2 "myFootprints:SHDR3W70P0X250_1X3_990X490X590P" H 3850 4700 50  0001 L CNN
 F 3 "http://www.molex.com/pdm_docs/sd/022035035_sd.pdf" H 3850 4600 50  0001 L CNN
@@ -870,10 +869,10 @@ Wire Wire Line
 Wire Wire Line
 	3200 4800 2800 4800
 $Comp
-L mySymbols:22-03-5035 J9
+L mySymbols:22-03-5035 DYN2
 U 1 1 5D130EDD
 P 3200 5150
-F 0 "J9" H 3828 5096 50  0000 L CNN
+F 0 "DYN2" H 3828 5096 50  0000 L CNN
 F 1 "22-03-5035" H 3828 5005 50  0000 L CNN
 F 2 "myFootprints:SHDR3W70P0X250_1X3_990X490X590P" H 3850 5250 50  0001 L CNN
 F 3 "http://www.molex.com/pdm_docs/sd/022035035_sd.pdf" H 3850 5150 50  0001 L CNN
@@ -960,10 +959,10 @@ Wire Wire Line
 Wire Wire Line
 	3800 850  3900 850 
 $Comp
-L Device:Rotary_Encoder_Switch SW1
+L Device:Rotary_Encoder_Switch OK1
 U 1 1 5D163650
 P 4800 5850
-F 0 "SW1" H 4800 6217 50  0000 C CNN
+F 0 "OK1" H 4800 6217 50  0000 C CNN
 F 1 "Rotary_Encoder_Switch" H 4800 6126 50  0000 C CNN
 F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" H 4650 6010 50  0001 C CNN
 F 3 "~" H 4800 6110 50  0001 C CNN
@@ -971,10 +970,10 @@ F 3 "~" H 4800 6110 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Switch:SW_Push SW2
+L Switch:SW_Push Ret1
 U 1 1 5D16436C
 P 4750 6800
-F 0 "SW2" H 4750 7085 50  0000 C CNN
+F 0 "Ret1" H 4750 7085 50  0000 C CNN
 F 1 "return" H 4750 6994 50  0000 C CNN
 F 2 "Button_Switch_THT:SW_PUSH_6mm_H5mm" H 4750 7000 50  0001 C CNN
 F 3 "" H 4750 7000 50  0001 C CNN
