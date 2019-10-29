@@ -1,12 +1,12 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Testeur"
-Date "2019-09-12"
-Rev "2.2"
+Date "2019-10-29"
+Rev "2.3"
 Comp "Fabien B"
 Comment1 ""
 Comment2 ""
@@ -242,8 +242,6 @@ F 3 "" H 2850 1200 50  0001 C CNN
 	1    2850 1200
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2850 1200 2750 1200
 Wire Wire Line
 	1550 1200 1400 1200
 Wire Wire Line
@@ -962,8 +960,8 @@ $Comp
 L Device:Rotary_Encoder_Switch OK1
 U 1 1 5D163650
 P 4800 5850
-F 0 "OK1" H 4800 6217 50  0000 C CNN
-F 1 "Rotary_Encoder_Switch" H 4800 6126 50  0000 C CNN
+F 0 "OK1" H 4800 5500 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 4800 5600 50  0000 C CNN
 F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" H 4650 6010 50  0001 C CNN
 F 3 "~" H 4800 6110 50  0001 C CNN
 	1    4800 5850
@@ -979,17 +977,6 @@ F 2 "Button_Switch_THT:SW_PUSH_6mm_H5mm" H 4750 7000 50  0001 C CNN
 F 3 "" H 4750 7000 50  0001 C CNN
 	1    4750 6800
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C2
-U 1 1 5D202792
-P 6400 5350
-F 0 "C2" H 6285 5304 50  0000 R CNN
-F 1 "100n" H 6285 5395 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6438 5200 50  0001 C CNN
-F 3 "~" H 6400 5350 50  0001 C CNN
-	1    6400 5350
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R2
@@ -1173,17 +1160,6 @@ Wire Wire Line
 Wire Wire Line
 	4700 2850 5250 2850
 $Comp
-L mySymbols:MAX6818 U5
-U 1 1 5D7B64A2
-P 6050 6200
-F 0 "U5" H 6050 6915 50  0000 C CNN
-F 1 "MAX6818" H 6050 6824 50  0000 C CNN
-F 2 "Package_SO:SSOP-20_5.3x7.2mm_P0.65mm" H 6150 5500 50  0001 C CNN
-F 3 "https://datasheets.maximintegrated.com/en/ds/MAX6816-MAX6818.pdf" H 6150 5400 50  0001 C CNN
-	1    6050 6200
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0139
 U 1 1 5D7BCFF5
 P 4300 6800
@@ -1195,32 +1171,17 @@ F 3 "" H 4300 6800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	5500 6800 5500 6150
-Wire Wire Line
-	5500 6150 5700 6150
-Wire Wire Line
 	5100 5850 5200 5850
 $Comp
 L power:GND #PWR0140
 U 1 1 5D7D4091
-P 4350 5750
-F 0 "#PWR0140" H 4350 5500 50  0001 C CNN
-F 1 "GND" V 4355 5622 50  0000 R CNN
-F 2 "" H 4350 5750 50  0001 C CNN
-F 3 "" H 4350 5750 50  0001 C CNN
-	1    4350 5750
+P 4150 5750
+F 0 "#PWR0140" H 4150 5500 50  0001 C CNN
+F 1 "GND" V 4155 5622 50  0000 R CNN
+F 2 "" H 4150 5750 50  0001 C CNN
+F 3 "" H 4150 5750 50  0001 C CNN
+	1    4150 5750
 	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR0141
-U 1 1 5D7D40DA
-P 5700 6750
-F 0 "#PWR0141" H 5700 6500 50  0001 C CNN
-F 1 "GND" V 5705 6622 50  0000 R CNN
-F 2 "" H 5700 6750 50  0001 C CNN
-F 3 "" H 5700 6750 50  0001 C CNN
-	1    5700 6750
-	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0146
@@ -1234,107 +1195,21 @@ F 3 "" H 5200 5850 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	5700 6650 5700 6750
+	4500 5750 4200 5750
 Wire Wire Line
-	5100 5750 5600 5750
+	4500 5950 4400 5950
 Wire Wire Line
-	4500 5750 4350 5750
-Wire Wire Line
-	4500 5950 4350 5950
-Wire Wire Line
-	4350 5950 4350 6250
-Wire Wire Line
-	4350 6250 5300 6250
-Wire Wire Line
-	5300 6250 5300 6050
-Wire Wire Line
-	5300 6050 5700 6050
-Wire Wire Line
-	6400 5750 6550 5750
-Wire Wire Line
-	6550 5750 6550 5350
-Connection ~ 6550 5350
-Wire Wire Line
-	6550 5350 6550 5300
-Wire Wire Line
-	6250 5350 5700 5350
-Wire Wire Line
-	5700 5350 5700 5750
-$Comp
-L power:GND #PWR0148
-U 1 1 5D81A8A7
-P 5700 5350
-F 0 "#PWR0148" H 5700 5100 50  0001 C CNN
-F 1 "GND" V 5705 5222 50  0000 R CNN
-F 2 "" H 5700 5350 50  0001 C CNN
-F 3 "" H 5700 5350 50  0001 C CNN
-	1    5700 5350
-	-1   0    0    1   
-$EndComp
-Connection ~ 5700 5350
-NoConn ~ 6400 6650
-NoConn ~ 5700 6550
-NoConn ~ 5700 6450
-NoConn ~ 5700 6350
-NoConn ~ 5700 6250
-NoConn ~ 6400 6550
-NoConn ~ 6400 6450
-NoConn ~ 6400 6350
-NoConn ~ 6400 6250
-Wire Wire Line
-	6400 5850 6750 5850
-Wire Wire Line
-	6750 5950 6400 5950
-Wire Wire Line
-	6400 6050 6750 6050
-Wire Wire Line
-	6750 6150 6400 6150
-Text Label 6750 5850 2    50   ~ 0
+	4400 6350 4750 6350
+Text Label 5550 5950 2    50   ~ 0
 ENC_A
-Text Label 6750 5950 2    50   ~ 0
+Text Label 5550 5750 2    50   ~ 0
 ENC_B
-Text Label 6750 6050 2    50   ~ 0
+Text Label 4750 6350 2    50   ~ 0
 OK_BTN
-Text Label 6750 6150 2    50   ~ 0
+Text Label 5700 6800 2    50   ~ 0
 RET_BTN
 Wire Wire Line
-	5600 5950 5700 5950
-Wire Wire Line
-	5600 5750 5600 5950
-Wire Wire Line
-	5100 5950 5500 5950
-Wire Wire Line
-	5500 5950 5500 5850
-Wire Wire Line
-	5500 5850 5700 5850
-Wire Wire Line
 	4550 6800 4300 6800
-Wire Wire Line
-	4950 6800 5500 6800
-$Comp
-L power:+3V3 #PWR0147
-U 1 1 5D7B2BB3
-P 6550 5300
-F 0 "#PWR0147" H 6550 5150 50  0001 C CNN
-F 1 "+3V3" H 6565 5473 50  0000 C CNN
-F 2 "" H 6550 5300 50  0001 C CNN
-F 3 "" H 6550 5300 50  0001 C CNN
-	1    6550 5300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0149
-U 1 1 5D7B2C03
-P 6350 4150
-F 0 "#PWR0149" H 6350 4000 50  0001 C CNN
-F 1 "+3V3" V 6365 4278 50  0000 L CNN
-F 2 "" H 6350 4150 50  0001 C CNN
-F 3 "" H 6350 4150 50  0001 C CNN
-	1    6350 4150
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6350 4150 6150 4150
 $Comp
 L Device:R R7
 U 1 1 5D7C2951
@@ -1381,4 +1256,104 @@ F 3 "" H 6800 1550 50  0001 C CNN
 	1    6800 1550
 	0    1    1    0   
 $EndComp
+$Comp
+L power:GND #PWR0141
+U 1 1 5DB8F559
+P 2800 1500
+F 0 "#PWR0141" H 2800 1250 50  0001 C CNN
+F 1 "GND" H 2805 1327 50  0000 C CNN
+F 2 "" H 2800 1500 50  0001 C CNN
+F 3 "" H 2800 1500 50  0001 C CNN
+	1    2800 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 1200 2800 1200
+$Comp
+L Device:CP C2
+U 1 1 5DB8F7B9
+P 2800 1350
+F 0 "C2" H 2918 1396 50  0000 L CNN
+F 1 "CP" H 2918 1305 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D" H 2838 1200 50  0001 C CNN
+F 3 "~" H 2800 1350 50  0001 C CNN
+	1    2800 1350
+	1    0    0    -1  
+$EndComp
+Connection ~ 2800 1200
+Wire Wire Line
+	2800 1200 2850 1200
+$Comp
+L Device:R R10
+U 1 1 5DBCFEA5
+P 5100 6800
+F 0 "R10" V 4893 6800 50  0000 C CNN
+F 1 "10k" V 4984 6800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5030 6800 50  0001 C CNN
+F 3 "~" H 5100 6800 50  0001 C CNN
+	1    5100 6800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5DBD00F4
+P 4750 6950
+F 0 "C5" V 5000 6950 50  0000 C CNN
+F 1 "330n" V 4900 6950 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4788 6800 50  0001 C CNN
+F 3 "~" H 4750 6950 50  0001 C CNN
+	1    4750 6950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4550 6800 4550 6950
+Wire Wire Line
+	4550 6950 4600 6950
+Connection ~ 4550 6800
+Wire Wire Line
+	4900 6950 5250 6950
+Wire Wire Line
+	5250 6950 5250 6800
+Wire Wire Line
+	5250 6800 5700 6800
+Connection ~ 5250 6800
+$Comp
+L Device:R R9
+U 1 1 5DC32E96
+P 4400 6100
+F 0 "R9" V 4193 6100 50  0000 C CNN
+F 1 "10k" V 4284 6100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4330 6100 50  0001 C CNN
+F 3 "~" H 4400 6100 50  0001 C CNN
+	1    4400 6100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4400 6250 4400 6350
+$Comp
+L Device:C C3
+U 1 1 5DC6AB8F
+P 4200 6100
+F 0 "C3" V 4450 6100 50  0000 C CNN
+F 1 "330n" V 4350 6100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4238 5950 50  0001 C CNN
+F 3 "~" H 4200 6100 50  0001 C CNN
+	1    4200 6100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4200 5950 4200 5750
+Connection ~ 4200 5750
+Wire Wire Line
+	4200 5750 4150 5750
+Wire Wire Line
+	4200 6250 4200 6350
+Wire Wire Line
+	4200 6350 4400 6350
+Connection ~ 4400 6350
+Wire Wire Line
+	5100 5750 5550 5750
+Wire Wire Line
+	5100 5950 5550 5950
+NoConn ~ 6150 4150
 $EndSCHEMATC
