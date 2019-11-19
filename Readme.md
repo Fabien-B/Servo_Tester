@@ -9,3 +9,10 @@ Based on a nucleo32 L432KC, this device allow to command up to 5 (only 3 working
 It also support dynamixel AX-12A servomotors.
 
 It features I2C and CAN capabilities. 
+
+
+## Hardware
+
+PCB was made with Kicad 5.0. Go to the Release page to get the gerbers files.
+
+Run `git submodule update --init --recursive` to fetch kicad libraries.
