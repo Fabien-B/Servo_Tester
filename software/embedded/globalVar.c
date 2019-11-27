@@ -10,15 +10,15 @@
 
 #if HAL_USE_SERIAL_USB
 SerialUSBDriver SDU1;
-BaseSequentialStream *chp = (BaseSequentialStream *) &SDU1;
+//BaseSequentialStream *chp = (BaseSequentialStream *) &SDU1;
 #else
-BaseSequentialStream *chp = (BaseSequentialStream *) &SD2;
+//BaseSequentialStream *chp = (BaseSequentialStream *) &SD2;
 #endif // HAL_USE_SERIAL_USB
 
 
 
-const uint8_t *UniqProcessorId = (uint8_t *) 0x1FFF7590;
-const uint8_t UniqProcessorIdLen = 12;
+//const uint8_t *UniqProcessorId = (uint8_t *) 0x1FFF7590;
+//const uint8_t UniqProcessorIdLen = 12;
 volatile uint32_t blinkPeriod = 500;
 
 /*

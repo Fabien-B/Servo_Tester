@@ -10,8 +10,8 @@
 /* uniq id of stm32 processor                                                        */
 /*===========================================================================*/
 
-extern const uint8_t *UniqProcessorId ;
-extern const uint8_t UniqProcessorIdLen ;
+//extern const uint8_t *UniqProcessorId ;
+//extern const uint8_t UniqProcessorIdLen ;
 
 
 /*===========================================================================*/
@@ -34,5 +34,5 @@ extern volatile uint32_t blinkPeriod;
 extern SerialUSBDriver SDU1;
 #endif // HAL_USE_SERIAL_USB
 
-extern BaseSequentialStream *chp;
+//extern BaseSequentialStream *chp;
 #endif //  __GLOBAL_VAR_H__

@@ -117,11 +117,11 @@ BOARD = NUCLEO432
 CHIBISTUDIO=/home/fabien/CHIBISTUDIO
 MY_DIRNAME=$(CHIBISTUDIO)/ChibiOS_stable
 
-CHIBIOS = $(CHIBISTUDIO)/ChibiOS_stable
-STMSRC = $(CHIBISTUDIO)/COMMON/stm
-VARIOUS = $(CHIBISTUDIO)/COMMON/various
+CHIBIOS = ./chibios_svn_mirror
+#STMSRC = $(CHIBISTUDIO)/COMMON/stm
+VARIOUS = ./chibios_enac_various_common
 USBD_LIB = $(VARIOUS)/Chibios-USB-Devices
-	
+BOARDGEN = $(VARIOUS)/TOOLS/boardGen.pl
 
 
 
@@ -279,7 +279,7 @@ $(OBJS): local/$(BOARD)/board.h
 
 
 local/$(BOARD)/board.h: local/$(BOARD)/board.cfg Makefile
-	boardGen.pl --no-pp-pin --no-pp-line --no-adcp-in	$<  $@
+	$(BOARDGEN) --no-pp-pin --no-pp-line --no-adcp-in	$<  $@
 
 stflash: all
 	@echo write $(BUILDDIR)/$(PROJECT).bin to flash memory
