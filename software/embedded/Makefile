@@ -122,6 +122,7 @@ CHIBIOS = ./chibios_svn_mirror
 VARIOUS = ./chibios_enac_various_common
 USBD_LIB = $(VARIOUS)/Chibios-USB-Devices
 BOARDGEN = $(VARIOUS)/TOOLS/boardGen.pl
+BMPFLASH = $(VARIOUS)/TOOLS/bmpflash
 
 
 
@@ -288,5 +289,5 @@ stflash: all
 
 flash: all
 	@echo write $(BUILDDIR)/$(PROJECT).bin to flash memory
-	bmpflash  $(BUILDDIR)/$(PROJECT).elf
+	$(BMPFLASH)  $(BUILDDIR)/$(PROJECT).elf
 	@echo Done
