@@ -1,0 +1,23 @@
+name: Embedded STM32 Build
+
+on: [push]
+
+jobs:
+  build:
+    env:
+      ARM_TOOLCHAIN_URL: https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/RC2.1/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2?revision=6e63531f-8cb1-40b9-bbfc-8a57cdfc01b4&la=en&hash=F761343D43A0587E8AC0925B723C04DBFB848339
+      ARM_TOOLCHAIN_EXTRACTED_FOLDER_NAME: gcc-arm-none-eabi-9-2019-q4-major
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Checkout submodules
+      run: git submodule update --init --recursive || true
+    - name: install PERL dependencies
+      run: echo $PATH && sudo apt update && sudo apt install -y libmodern-perl-perl libxml-libxml-perl && sudo perl -MCPAN -e 'install String::LCSS'
+    - name: install ARM build toolchain
+      working-directory: /usr/local
+      run: sudo wget -O gcc-arm-none-eabi-tar $ARM_TOOLCHAIN_URL && sudo tar -xvf gcc-arm-none-eabi-tar && sudo ln -s $ARM_TOOLCHAIN_EXTRACTED_FOLDER_NAME gcc-arm-none-eabi
+    - name: make
+      working-directory: software/embedded
+      run: export PATH=$PATH:/usr/local/gcc-arm-none-eabi/bin && make
