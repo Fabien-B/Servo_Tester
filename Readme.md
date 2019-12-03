@@ -1,5 +1,6 @@
 Servo Tester
 =============
+[![Build Status](https://github.com//Fabien-B/Servo_Tester/workflows/Embedded%20STM32%20Build/badge.svg)](https://github.com/Fabien-B/Servo_Tester/actions?query=workflow%3A%22Embedded+STM32+Build%22)
 
 _This project is a work in progress. Some features are missing._
 
