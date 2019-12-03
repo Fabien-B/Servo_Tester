@@ -81,7 +81,7 @@ void StateManager::run() {
         }
         //periodic stuff
 
-		//chThdSleepMilliseconds(10);
+		chThdSleepMilliseconds(1);
     }
 }
 
