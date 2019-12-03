@@ -162,17 +162,19 @@ CSRC += $(STARTUPSRC) \
 
 CSRC += ./userlib/src/lcd.c \
         ./userlib/src/servos.c \
-        ./userlib/src/i2c_features.c
+        drivers/i2c/srf02.c \
+        hardware_config.c
 
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
-CPPSRC += dynamixel/DynamixelSerial.cpp \
+CPPSRC += drivers/dynamixel/DynamixelSerial.cpp \
           StateMachine/AbstractState.cpp \
           StateMachine/ui.cpp \
           StateMachine/MainMenuState.cpp \
           StateMachine/ServoState.cpp \
           StateMachine/DynamixelState.cpp \
+          StateMachine/I2CState.cpp \
           StateMachine/StateManager.cpp \
           main.cpp
 
@@ -206,7 +208,9 @@ INCDIR += $(CHIBIOS)/os/license \
          $(CHIBIOS)/os/various $(VARIOUS)
 
 INCDIR += ./userlib/include/ \
-          StateMachine/
+          StateMachine/ \
+          drivers/dynamixel \
+          drivers/i2c
 
 #
 # Project, sources and paths

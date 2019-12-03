@@ -39,6 +39,7 @@
 /* Driver local definitions.                                                 */
 /*===========================================================================*/
 
+char blank[] = "                ";
 
 /* LCD REGISTERS */
 #define LCD_INSTRUCTION_R               PAL_LOW
@@ -433,6 +434,14 @@ void lcdClearDisplay(LCDDriver *lcdp){
   osalDbgCheck(lcdp != NULL);
   osalDbgAssert((lcdp->state == LCD_ACTIVE), "lcdClearDisplay(), invalid state");
   hd44780WriteRegister(lcdp, LCD_INSTRUCTION_R, LCD_CLEAR_DISPLAY);
+}
+
+void lcdClear1stLine(LCDDriver *lcdp) {
+  lcdWriteString(lcdp, blank, 0);
+}
+
+void lcdClear2ndLine(LCDDriver *lcdp) {
+  lcdWriteString(lcdp, blank, 40);
 }
 
 /**

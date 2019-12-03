@@ -1,5 +1,5 @@
 #include "DynamixelState.h"
-#include "dynamixel/DynamixelSerial.h"
+#include "DynamixelSerial.h"
 #include "lcd.h"
 #include "printf.h"
 #include "MainMenuState.h"

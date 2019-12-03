@@ -6,7 +6,7 @@
 #define EMBEDDED_DYNAMIXELSTATE_H
 
 #include "AbstractState.h"
-#include "dynamixel/DynamixelSerial.h"
+#include "DynamixelSerial.h"
 
 enum DynamixelFunction {
     E_DynamixelMove,

@@ -223,6 +223,8 @@ extern "C" {
   void lcdStart(LCDDriver *lcdp, const LCDConfig *config);
   void lcdStop(LCDDriver *lcdp);
   void lcdClearDisplay(LCDDriver *lcdp);
+  void lcdClear1stLine(LCDDriver *lcdp);
+  void lcdClear2ndLine(LCDDriver *lcdp);
   void lcdReturnHome(LCDDriver *lcdp);
   void lcdSetAddress(LCDDriver *lcdp, uint8_t add);
   void lcdWriteString(LCDDriver *lcdp, char* string, uint8_t pos);

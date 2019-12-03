@@ -7,7 +7,7 @@ extern "C" {
 #include "ttyConsole.h"
 #include "lcd.h"
 #include "servos.h"
-#include "i2c_features.h"
+#include "hardware_config.h"
 }
 #include "ui.h"
 #include "StateMachine/StateManager.h"
