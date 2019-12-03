@@ -36,6 +36,12 @@ Download and install SMT32CubeMx with admin rights (need to signup on st.com): [
 
 Make sure it is installed in `/usr/local` for linux users (_not_ in your $HOME) or `C:\Program Files` for windows users.
 
+__Edit udev rules for Black Magic Probe__
+
+If you are using the nucleo with black magic probe, install the udev rule :
+
+`sudo cp 49-black_magic_probe.rules /etc/udev/rules.d/`
+
 __Build__
 
 To build the firmware, go to software/embedded then run `make`.
