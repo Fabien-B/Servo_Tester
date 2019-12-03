@@ -1,0 +1,22 @@
+# 
+# Black magic probe arm swd probe
+#
+
+#SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="6018", \
+#    MODE:="0666", SYMLINK+="blackMagicProbe"
+
+
+#KERNEL=="ttyACM*", SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="6018", MODE="666",\
+#		    PROGRAM="/bin/bash -c '/bin/echo %p | /bin/grep -c :1.0", RESULT=="1", SYMLINK+="blackMagicProbe_gdb", GROUP="dialout"
+#
+#KERNEL=="ttyACM*", SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="6018", MODE="666",\
+#		    PROGRAM="/bin/bash -c '/bin/echo %p | /bin/grep -c :1.2", RESULT=="1", SYMLINK+="blackMagicProbe_serial", GROUP="dialout"
+
+# felix simpler rules
+SUBSYSTEM=="tty", ATTRS{interface}=="Black Magic GDB Server", SYMLINK+="bmp_gdb"
+SUBSYSTEM=="tty", ATTRS{interface}=="Black Magic UART Port", SYMLINK+="bmp_tty"
+
+# If you share your linux system with other users, or just don't like the
+# idea of write permission for everybody, you can replace MODE:="0666" with
+# OWNER:="yourusername" to create the device owned by you, or with
+# GROUP:="somegroupname" and mange access using standard unix groups.
