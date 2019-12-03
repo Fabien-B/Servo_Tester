@@ -215,8 +215,8 @@
 #define PIN_LOCKR_DISABLED(n)       (0U << (n))
 #define PIN_LOCKR_ENABLED(n)        (1U << (n))
 
-#define VAL_GPIOA_MODER                 (PIN_MODE_INPUT(ENC_A) | \
-					 PIN_MODE_INPUT(ENC_B) | \
+#define VAL_GPIOA_MODER                 (PIN_MODE_ALTERNATE(ENC_A) | \
+					 PIN_MODE_ALTERNATE(ENC_B) | \
 					 PIN_MODE_ALTERNATE(VCP_TX) | \
 					 PIN_MODE_ALTERNATE(SERVO5) | \
 					 PIN_MODE_OUTPUT(LED1) | \
@@ -232,8 +232,8 @@
 					 PIN_MODE_ALTERNATE(SWCLK) | \
 					 PIN_MODE_ALTERNATE(VCP_RX))
 
-#define VAL_GPIOA_OTYPER                (PIN_OTYPE_OPENDRAIN(ENC_A) | \
-					 PIN_OTYPE_OPENDRAIN(ENC_B) | \
+#define VAL_GPIOA_OTYPER                (PIN_OTYPE_PUSHPULL(ENC_A) | \
+					 PIN_OTYPE_PUSHPULL(ENC_B) | \
 					 PIN_OTYPE_PUSHPULL(VCP_TX) | \
 					 PIN_OTYPE_PUSHPULL(SERVO5) | \
 					 PIN_OTYPE_PUSHPULL(LED1) | \
@@ -249,8 +249,8 @@
 					 PIN_OTYPE_PUSHPULL(SWCLK) | \
 					 PIN_OTYPE_PUSHPULL(VCP_RX))
 
-#define VAL_GPIOA_OSPEEDR               (PIN_OSPEED_SPEED_VERYLOW(ENC_A) | \
-					 PIN_OSPEED_SPEED_VERYLOW(ENC_B) | \
+#define VAL_GPIOA_OSPEEDR               (PIN_OSPEED_SPEED_HIGH(ENC_A) | \
+					 PIN_OSPEED_SPEED_HIGH(ENC_B) | \
 					 PIN_OSPEED_SPEED_HIGH(VCP_TX) | \
 					 PIN_OSPEED_SPEED_HIGH(SERVO5) | \
 					 PIN_OSPEED_SPEED_VERYLOW(LED1) | \
@@ -266,8 +266,8 @@
 					 PIN_OSPEED_SPEED_HIGH(SWCLK) | \
 					 PIN_OSPEED_SPEED_HIGH(VCP_RX))
 
-#define VAL_GPIOA_PUPDR                 (PIN_PUPDR_FLOATING(ENC_A) | \
-					 PIN_PUPDR_FLOATING(ENC_B) | \
+#define VAL_GPIOA_PUPDR                 (PIN_PUPDR_PULLUP(ENC_A) | \
+					 PIN_PUPDR_PULLUP(ENC_B) | \
 					 PIN_PUPDR_FLOATING(VCP_TX) | \
 					 PIN_PUPDR_FLOATING(SERVO5) | \
 					 PIN_PUPDR_FLOATING(LED1) | \
@@ -283,8 +283,8 @@
 					 PIN_PUPDR_PULLUP(SWCLK) | \
 					 PIN_PUPDR_FLOATING(VCP_RX))
 
-#define VAL_GPIOA_ODR                   (PIN_ODR_LEVEL_LOW(ENC_A) | \
-					 PIN_ODR_LEVEL_LOW(ENC_B) | \
+#define VAL_GPIOA_ODR                   (PIN_ODR_LEVEL_HIGH(ENC_A) | \
+					 PIN_ODR_LEVEL_HIGH(ENC_B) | \
 					 PIN_ODR_LEVEL_HIGH(VCP_TX) | \
 					 PIN_ODR_LEVEL_LOW(SERVO5) | \
 					 PIN_ODR_LEVEL_LOW(LED1) | \
@@ -300,8 +300,8 @@
 					 PIN_ODR_LEVEL_HIGH(SWCLK) | \
 					 PIN_ODR_LEVEL_HIGH(VCP_RX))
 
-#define VAL_GPIOA_AFRL			(PIN_AFIO_AF(ENC_A, 0) | \
-					 PIN_AFIO_AF(ENC_B, 0) | \
+#define VAL_GPIOA_AFRL			(PIN_AFIO_AF(ENC_A, 1) | \
+					 PIN_AFIO_AF(ENC_B, 1) | \
 					 PIN_AFIO_AF(VCP_TX, 7) | \
 					 PIN_AFIO_AF(SERVO5, 1) | \
 					 PIN_AFIO_AF(LED1, 0) | \
@@ -407,8 +407,8 @@
 					 PIN_PUPDR_FLOATING(SERVO2) | \
 					 PIN_PUPDR_FLOATING(PB02) | \
 					 PIN_PUPDR_FLOATING(LED_GREEN) | \
-					 PIN_PUPDR_FLOATING(OK_BTN) | \
-					 PIN_PUPDR_FLOATING(RET_BTN) | \
+					 PIN_PUPDR_PULLUP(OK_BTN) | \
+					 PIN_PUPDR_PULLUP(RET_BTN) | \
 					 PIN_PUPDR_PULLUP(SCL) | \
 					 PIN_PUPDR_PULLUP(SDA) | \
 					 PIN_PUPDR_FLOATING(PB08) | \
@@ -1037,6 +1037,10 @@
 					 PIN_LOCKR_DISABLED(PE14) | \
 					 PIN_LOCKR_DISABLED(PE15))
 
+#define AF_ENC_A                         1U
+#define AF_LINE_ENC_A                    1U
+#define AF_ENC_B                         1U
+#define AF_LINE_ENC_B                    1U
 #define AF_VCP_TX                        7U
 #define AF_LINE_VCP_TX                   7U
 #define AF_SERVO5                        1U

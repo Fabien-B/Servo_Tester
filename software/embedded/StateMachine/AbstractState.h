@@ -12,7 +12,7 @@
 struct UiState {
     UiState(volatile UiState &uis); // chMtxLock(&mut);  
     UiState();
-    void clearEvent() volatile;
+    void clearEvents() volatile;
 
     bool ok_clicked;
     bool ret_clicked;

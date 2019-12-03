@@ -19,7 +19,7 @@ UiState::UiState(volatile UiState &uis) {
     chMtxUnlock((ch_mutex*)&(uis.mut));
 }
 
-void UiState::clearEvent() volatile {
+void UiState::clearEvents() volatile {
     ok_clicked = false;
     ret_clicked = false;
     enc_changed = false;

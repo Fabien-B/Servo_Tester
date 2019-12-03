@@ -48,7 +48,7 @@ void ServoState::leave() {
 AbstractState* ServoState::onUiEvent(struct UiState ui_state) {
 	if(driving_servo) {
 		if(ui_state.enc_changed) {
-			servo_positions[no_servo] = CLAMP_TO(SERVO_MIN, SERVO_MAX, servo_positions[no_servo] + (ui_state.pos_enc - last_pos_enc));
+			servo_positions[no_servo] = CLAMP_TO(SERVO_MIN, SERVO_MAX, servo_positions[no_servo] + (ui_state.pos_enc - last_pos_enc) * ui_state.encoder_speed);
 			last_pos_enc = ui_state.pos_enc;
 			chsnprintf(txt_pos_servo, sizeof(txt_pos_servo), "T = %4d", servo_positions[no_servo]);
 			lcdWriteString(&LCDD1, txt_pos_servo, 40);

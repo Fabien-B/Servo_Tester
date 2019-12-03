@@ -35,23 +35,23 @@ PWMConfig pwmcfg1 = {
 	.dier = 0
 };
 
-PWMConfig pwmcfg2 = {
-	.frequency = 1000000,
-	.period = 20000,
-	.callback = NULL,
-	.channels = {
-			{PWM_OUTPUT_DISABLED, NULL},	//ch1
-			{PWM_OUTPUT_DISABLED, NULL},	//ch2
-			{PWM_OUTPUT_DISABLED, NULL},	//ch3
-			{								//ch4
-					.mode = PWM_OUTPUT_ACTIVE_HIGH,
-					.callback = NULL
-			}
-	},
-	.cr2 = 0,
-	.bdtr = 0,
-	.dier = 0
-};
+// PWMConfig pwmcfg2 = {
+// 	.frequency = 1000000,
+// 	.period = 20000,
+// 	.callback = NULL,
+// 	.channels = {
+// 			{PWM_OUTPUT_DISABLED, NULL},	//ch1
+// 			{PWM_OUTPUT_DISABLED, NULL},	//ch2
+// 			{PWM_OUTPUT_DISABLED, NULL},	//ch3
+// 			{								//ch4
+// 					.mode = PWM_OUTPUT_ACTIVE_HIGH,
+// 					.callback = NULL
+// 			}
+// 	},
+// 	.cr2 = 0,
+// 	.bdtr = 0,
+// 	.dier = 0
+// };
 
 PWMConfig pwmcfg16 = {
 	.frequency = 1000000,
