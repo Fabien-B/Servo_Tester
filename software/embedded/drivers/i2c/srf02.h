@@ -16,10 +16,6 @@
 #define MIN_ADDRESS 0X70
 #define MAX_ADDRESS 0X7E
 
-#define I2C_OK			0
-#define I2C_NOT_READY	-1
-#define I2C_ERROR		-2
-
 int srf02_range(I2CDriver *i2cp, uint8_t address, uint16_t* range);
 bool address_exists(I2CDriver *i2cp, uint8_t address);
 uint8_t get_next_device(I2CDriver *i2cp);

@@ -6,6 +6,7 @@
  */
 
 #include "srf02.h"
+#include "common_i2c.h"
 
 
 int srf02_range(I2CDriver *i2cp, uint8_t address, uint16_t* range) {

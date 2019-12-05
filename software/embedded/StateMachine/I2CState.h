@@ -2,7 +2,7 @@
 #define I2CSTATE_H_
 
 #include "AbstractState.h"
-
+#include "VL6180x.h"
 
 class I2CState : public AbstractState {
 public:
@@ -21,7 +21,7 @@ private:
 extern I2CState i2cState;
 
 
-///////////////////////////////////////////////////////////////////
+///////////////////////  SRF02  //////////////////////////////////
 
 class SRF02State : public AbstractState {
 public:
@@ -50,5 +50,28 @@ private:
 };
 
 extern SRF02State srf02State;
+
+
+/////////////////////////  VL6180x  /////////////////////////////////
+
+class VL6180xState : public AbstractState {
+public:
+
+    VL6180xState();
+    void enter(int32_t pos_enc);
+    AbstractState* onUiEvent(struct UiState ui_state);
+    AbstractState* periodic();
+    void leave();
+
+private:
+
+    void range_and_display(void);
+    int32_t pos_enc_init;
+    int32_t last_pos_enc;
+    uint8_t current_addr;
+
+};
+
+extern VL6180xState vl6180xState;
 
 #endif // I2CSTATE_H_
