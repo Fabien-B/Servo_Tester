@@ -9,6 +9,7 @@ __Install Perl dependencies (used to generate board.h file from board.cfg):__
 
 ```
 sudo apt update
+sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386
 sudo apt install libmodern-perl-perl libxml-libxml-perl
 sudo perl -MCPAN -e 'install String::LCSS'
 ```
@@ -41,6 +42,10 @@ __Edit udev rules for Black Magic Probe__
 If you are using the nucleo with black magic probe, install the udev rule :
 
 `sudo cp 49-black_magic_probe.rules /etc/udev/rules.d/`
+
+and update them with :
+
+`sudo udevadm control --reload-rules && sudo udevadm trigger`
 
 __Build__
 

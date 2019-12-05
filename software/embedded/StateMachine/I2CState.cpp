@@ -130,7 +130,7 @@ AbstractState* SRF02State::onUiEvent(struct UiState ui_state) {
             if(i==0) {
                 uint16_t range = 0;
                 srf02_range(&I2CD1, current_addr, &range);
-                chsnprintf(txt, sizeof(txt), "Range   %3d mm", range);
+                chsnprintf(txt, sizeof(txt), "Range   %3d cm", range);
                 lcdWriteString(&LCDD1, txt, 40);
             } else if(i==1) {
                 chsnprintf(txt, sizeof(txt), "Change addr 0x%02X", MIN_ADDRESS);
