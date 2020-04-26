@@ -15,6 +15,8 @@ enum DynamixelFunction {
     E_DynamixelSetTorque,
 };
 
+void dynInit(void);
+
 class DynamixelIDState : public AbstractState {
 public:
     DynamixelIDState();
@@ -80,5 +82,6 @@ extern DynamixelIDState dynamixelIDState;
 extern DynamixelFnMenuState dynamixelFnMenuState;
 extern DynamixelMoveState dynamixelMoveState;
 
+extern DynamixelSerial dyn;
 
 #endif //EMBEDDED_DYNAMIXELSTATE_H

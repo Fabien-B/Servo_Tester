@@ -19,7 +19,11 @@ DynamixelFnMenuState dynamixelFnMenuState = DynamixelFnMenuState();
 DynamixelMoveState dynamixelMoveState = DynamixelMoveState();
 
 
-
+void dynInit() {
+    sdStop(&SD1);
+    uart1conf.speed = 500000;
+    sdStart(&SD1, &uart1conf);
+}
 
 
 DynamixelIDState::DynamixelIDState() {

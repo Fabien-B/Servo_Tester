@@ -11,7 +11,20 @@ extern "C" {
 }
 #include "ui.h"
 #include "StateMachine/StateManager.h"
+#include "DynamixelState.h"
 
+
+static THD_WORKING_AREA(waBlinker, 200);
+
+static void blinker (void *arg)
+{
+  (void)arg;
+  chRegSetThreadName("blinker");
+  while(true) {
+    palToggleLine(LINE_LED_GREEN);
+    chThdSleepMilliseconds(200);
+  }
+}
 
 static THD_WORKING_AREA(waUiStateMachine, 500);
 
@@ -39,9 +52,10 @@ int main(void) {
   init_servos();
   init_I2C();
   init_ui();
+  dynInit();
 
   stateManager.init();
-
+  chThdCreateStatic(waBlinker, sizeof(waBlinker), NORMALPRIO, &blinker, NULL);
   chThdCreateStatic(waUiStateMachine, sizeof(waUiStateMachine), NORMALPRIO, &runStateMachine, NULL);
 
   consoleInit(); // initialisation de la liaison série du shell

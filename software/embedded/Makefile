@@ -177,6 +177,7 @@ CPPSRC += drivers/dynamixel/DynamixelSerial.cpp \
           StateMachine/I2CState.cpp \
           StateMachine/StateManager.cpp \
           VL6180x.cpp \
+          dynamixel_interface.cpp \
           main.cpp
 
 # C sources to be compiled in ARM mode regardless of the global setting.

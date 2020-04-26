@@ -11,7 +11,9 @@
 #include "printf.h"
 #include "portage.h"
 #include "servos.h"
+#include "dynamixel_interface.h"
 
+//void dynamixelMove(int id, int pos);
 
 /*===========================================================================*/
 /* START OF EDITABLE SECTION                                           */
@@ -27,6 +29,7 @@ static void cmd_shutdown (BaseSequentialStream *lchp, int argc,const char * cons
 static void cmd_bkp (BaseSequentialStream *lchp, int argc,const char * const argv[]);
 static void cmd_conf (BaseSequentialStream *lchp, int argc,const char * const argv[]);
 static void cmd_servo (BaseSequentialStream *lchp, int argc,const char * const argv[]);
+static void cmd_dyn (BaseSequentialStream *lchp, int argc,const char * const argv[]);
 
 static const ShellCommand commands[] = {
   {"mem", cmd_mem},
@@ -38,6 +41,7 @@ static const ShellCommand commands[] = {
   {"bkp", cmd_bkp},
   {"conf", cmd_conf},
   {"servo", cmd_servo},
+  {"dyn", cmd_dyn},
   {NULL, NULL}
 };
 
@@ -53,6 +57,30 @@ static void cmd_servo(BaseSequentialStream *lchp, int argc,const char * const ar
   sscanf(argv[1], "%d", &us);
   chprintf (lchp, "Set servo %d to %d\r\n", no_servo, us);
   set_servo(no_servo, us);
+}
+
+
+static void cmd_dyn(BaseSequentialStream *lchp, int argc,const char * const argv[]) {
+  if(argc < 2) {
+	  chprintf (lchp, "Usage : >dyn <id> <pos> [speed]\r\n");
+	  return;
+  }
+  int id_dyn;
+  int pos;
+  sscanf(argv[0], "%d", &id_dyn);
+  sscanf(argv[1], "%d", &pos);
+
+  if(argc > 2) {
+    int speed;
+    sscanf(argv[2], "%d", &speed);
+    chprintf (lchp, "Set dyn %d to %d S%d\r\n", id_dyn, pos, speed);
+    dynamixelMoveSpeed(id_dyn, pos, speed);
+  } else {
+    chprintf (lchp, "Set dyn %d to %d\r\n", id_dyn, pos);
+    dynamixelMove(id_dyn, pos);
+  }
+
+  
 }
 
 /*===========================================================================*/
