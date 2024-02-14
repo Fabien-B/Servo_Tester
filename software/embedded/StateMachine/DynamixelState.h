@@ -80,5 +80,6 @@ extern DynamixelIDState dynamixelIDState;
 extern DynamixelFnMenuState dynamixelFnMenuState;
 extern DynamixelMoveState dynamixelMoveState;
 
+extern DynamixelSerial dyn;
 
 #endif //EMBEDDED_DYNAMIXELSTATE_H
