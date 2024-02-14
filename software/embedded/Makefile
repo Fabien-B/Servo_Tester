@@ -157,8 +157,7 @@ CSRC += $(STARTUPSRC) \
        $(VARIOUS)/printf.c \
        $(VARIOUS)/microrl/microrlShell.c \
        $(VARIOUS)/microrl/microrl.c \
-       ttyConsole.c \
-       globalVar.c \
+       globalVar.c
 
 CSRC += ./userlib/src/lcd.c \
         ./userlib/src/servos.c \
@@ -177,6 +176,7 @@ CPPSRC += drivers/dynamixel/DynamixelSerial.cpp \
           StateMachine/I2CState.cpp \
           StateMachine/StateManager.cpp \
           VL6180x.cpp \
+          ttyConsole.cpp \
           main.cpp
 
 # C sources to be compiled in ARM mode regardless of the global setting.
@@ -289,7 +289,7 @@ local/$(BOARD)/board.h: local/$(BOARD)/board.cfg Makefile
 
 stflash: all
 	@echo write $(BUILDDIR)/$(PROJECT).bin to flash memory
-	/usr/local/bin/st-flash write  $(BUILDDIR)/$(PROJECT).bin 0x08000000
+	st-flash write $(BUILDDIR)/$(PROJECT).bin 0x08000000
 	@echo Done
 
 flash: all

@@ -5,10 +5,15 @@
  *      Author: fabien
  */
 
-#if !defined(HARWARE_CONFIG_H_)
+#ifndef HARWARE_CONFIG_H_
 #define HARWARE_CONFIG_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 void init_I2C(void);
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif // HARWARE_CONFIG_H_

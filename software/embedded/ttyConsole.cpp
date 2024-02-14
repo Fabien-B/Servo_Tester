@@ -11,6 +11,7 @@
 #include "printf.h"
 #include "portage.h"
 #include "servos.h"
+#include "DynamixelState.h"
 
 
 /*===========================================================================*/
@@ -27,6 +28,7 @@ static void cmd_shutdown (BaseSequentialStream *lchp, int argc,const char * cons
 static void cmd_bkp (BaseSequentialStream *lchp, int argc,const char * const argv[]);
 static void cmd_conf (BaseSequentialStream *lchp, int argc,const char * const argv[]);
 static void cmd_servo (BaseSequentialStream *lchp, int argc,const char * const argv[]);
+static void cmd_dynamixel (BaseSequentialStream *lchp, int argc,const char * const argv[]);
 
 static const ShellCommand commands[] = {
   {"mem", cmd_mem},
@@ -38,6 +40,7 @@ static const ShellCommand commands[] = {
   {"bkp", cmd_bkp},
   {"conf", cmd_conf},
   {"servo", cmd_servo},
+  {"dyn", cmd_dynamixel},
   {NULL, NULL}
 };
 
@@ -53,6 +56,28 @@ static void cmd_servo(BaseSequentialStream *lchp, int argc,const char * const ar
   sscanf(argv[1], "%d", &us);
   chprintf (lchp, "Set servo %d to %d\r\n", no_servo, us);
   set_servo(no_servo, us);
+}
+
+static void cmd_dynamixel(BaseSequentialStream *lchp, int argc,const char * const argv[]) {
+  if(argc < 2) {
+	  chprintf (lchp, "Usage : >dyn 1 512 [200]\r\n");
+	  return;
+  }
+  int dyn_id;
+  int pos;
+  sscanf(argv[0], "%d", &dyn_id);
+  sscanf(argv[1], "%d", &pos);
+  if(argc == 2) {
+    chprintf (lchp, "Set dynamixel %d to %d\r\n", dyn_id, pos);
+    dyn.move(dyn_id, pos);
+  } else if(argc == 3) {
+    int speed;
+    sscanf(argv[2], "%d", &speed);
+    chprintf (lchp, "Set dynamixel %d to %d with speed %d\r\n", dyn_id, pos, speed);
+    dyn.moveSpeed(dyn_id, pos, speed);
+  }
+  
+  
 }
 
 /*===========================================================================*/
@@ -182,10 +207,14 @@ static void cmd_threads(BaseSequentialStream *lchp, int argc,const char * const 
   float idleTicks=0;
 
   static ThreadCpuInfo threadCpuInfo = {
-    .ticks = {[0 ... MAX_CPU_INFO_ENTRIES-1] = 0.f}, 
-    .cpu =   {[0 ... MAX_CPU_INFO_ENTRIES-1] =-1.f}, 
+    .ticks = {0}, 
+    .cpu =   {0}, 
     .totalTicks = 0.f
   };
+
+  for(int i=0; i<MAX_CPU_INFO_ENTRIES; i++) {
+    threadCpuInfo.cpu[i] = -1;
+  }
   
   stampThreadCpuInfo (&threadCpuInfo);
   

@@ -1,14 +1,16 @@
 
 extern "C" {
-#include <ch.h>
-#include <hal.h>
+
 #include "globalVar.h"
 #include "stdutil.h"
-#include "ttyConsole.h"
 #include "lcd.h"
 #include "servos.h"
-#include "hardware_config.h"
 }
+#include <ch.h>
+#include <hal.h>
+
+#include "hardware_config.h"
+#include "ttyConsole.h"
 #include "ui.h"
 #include "StateMachine/StateManager.h"
 
